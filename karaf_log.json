@@ -1,0 +1,22 @@
+{
+    "java_log" : {
+        "regex" : {
+            "fuse" : {
+                "pattern" : "^(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2},\\d{3})\\s+\\|\\s+(?<alert_level>\\w+)\\s+\\|\\s+(?<thread>.+)\\s+\\|\\s+(?<class>[\\w\\.]+)\\s+\\|\\s+(?<bundle>\\d+\\s-\\s\\w+[\\w\\_\\.-]+\\s-\\s\\w+[\\w\\_\\.-]+)\\s+\\|\\s+(?<body>.*)$"
+            },
+            "fuse-custom1-short" : {
+                "pattern" : "^(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2},\\d{3})\\s+\\|\\s+(?<alert_level>\\w+)\\s+\\|\\s+(?<thread>.+)\\s+\\|\\s+(?<class>[\\w\\.]+)\\s+\\|\\s+(?<body>.*)$"
+            }
+        },
+        "value" : {
+            "bundle" : { "kind" : "string", "identifier" : true },
+            "thread" : { "kind" : "string" }
+        },
+        "sample" : [
+            {
+                "line" : "2019-06-14 09:04:13,725 | INFO  | oServerThread-25 | FabricDiscoveryAgentFactory      | 128 - org.apache.activemq.activemq-osgi - 5.11.0.redhat-621216 | OSGi environment detected!",
+                "line" : "2019-06-11 22:10:00,337 | INFO  | default-workqueue-7 | com.truphone.esb.tmr.sms.recording.recorder | callCustomerDetails - ID-peamsesb03-oam-ams-truphone-com-58857-1548122973354-6-304180 - Customer details for customerIdId=27693, smsBatchRecording=false, metadataSmsRecording=true, metadataCallRecording=false"
+            }
+        ]
+    }
+}
